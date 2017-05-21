@@ -1,0 +1,79 @@
+<% if params[:action] == 'show' %>
+
+  <div class="form-group">
+    <%= f.label :status %>
+    <%= f.select :status, [:未着手, :着手中, :完了], {}, class: 'form-control', rows: 5, readonly: true %>
+  </div>
+  
+  <div class="form-group">
+    <%= f.label :email %>
+    <%= f.text_area :content, class: 'form-control', rows: 5, readonly: true %>
+  </div>
+  
+
+  
+<div class="container">
+    <div class="row">
+        <div class='col-md-2'>
+            <div class="form-group">
+                <div class='input-group date' id='datetimepicker1'>
+                    <input type='task_date' class="form-control" />
+                    <span class="input-group-addon">
+                        <span class="glyphicon glyphicon-calendar"></span>
+                    </span>
+                </div>
+            </div>
+        </div>
+        <script type="text/javascript">
+            $(function () {
+                $('#datetimepicker1').datetimepicker();
+            });
+        </script>
+    </div>
+</div>
+  
+  <div class="form-group">
+    <%= f.submit '登録', class: 'btn btn-primary btn-block' %>
+  </div>
+  
+  
+  
+<% else %>
+
+  <div class="form-group">
+    <%= f.label :status %>
+    <%= f.select :status, [:未着手, :着手中, :完了], {}, class: 'form-control', rows: 5 %>
+  </div>
+  
+  <div class="form-group">
+    <%= f.label :email %>
+    <%= f.text_area :content, class: 'form-control', rows: 5 %>
+  </div>
+  
+<div class="container">
+    <div class="row">
+        <div class='col-md-2'>
+            <div class="form-group">
+                <div class='input-group date' id='datetimepicker1'>
+                    <input type='task_date' class="form-control" />
+                    <span class="input-group-addon">
+                        <span class="glyphicon glyphicon-calendar"></span>
+                    </span>
+                </div>
+            </div>
+        </div>
+        <script type="text/javascript">
+            $(function () {
+                $('#datetimepicker1').datetimepicker();
+            });
+        </script>
+    </div>
+</div>
+
+  
+  <div class="form-group">
+    <%= f.submit '登録', class: 'btn btn-primary btn-block' %>
+  </div>
+
+  
+<% end %>

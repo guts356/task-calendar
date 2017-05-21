@@ -1,0 +1,11 @@
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
+
+    <%= form_for(task) do |f| %>
+      <%= render 'layouts/error_messages', model: f.object %>
+
+      <%= render 'form_extend', f: f %>
+    <% end %>
+    <%= link_to "一覧へ", root_path, class: 'btn btn-primary btn-block' if params[:action] == "show" %>
+  </div>
+</div>
