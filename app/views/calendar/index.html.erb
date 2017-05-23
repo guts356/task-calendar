@@ -3,3 +3,11 @@
 
 
 <div id="calendar"></div>
+
+<script>
+$(document).ready(function() {
+    $('#calendar').fullCalendar({
+        events: '/events.json',
+    });
+});
+</script>

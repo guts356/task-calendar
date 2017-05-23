@@ -4,6 +4,7 @@ class ToppagesController < ApplicationController
       @user = current_user
       @task = current_user.tasks.build  # form_for 用
       @tasks = current_user.tasks.order('created_at DESC').page(params[:page])
+      #@events = Event.all
     end
   end
 end
