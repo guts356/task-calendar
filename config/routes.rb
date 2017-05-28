@@ -11,4 +11,6 @@ Rails.application.routes.draw do
   resources :users, only: [:show, :new, :create]
   resources :tasks
   get 'events', to: 'event#events'
+  post 'events/create', to: 'event#create'
+   post 'events/update', to: 'event#update'
 end
