@@ -12,5 +12,5 @@ Rails.application.routes.draw do
   resources :tasks
   get 'events', to: 'event#events'
   post 'events/create', to: 'event#create'
-   post 'events/update', to: 'event#update'
+  patch 'events/update', to: 'event#update'
 end

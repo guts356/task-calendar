@@ -35,6 +35,10 @@
 });*/
 
 $(document).ready(function() {
+  
+    // $('#calendar').fullCalendar({
+    //     events: '/events.json',
+    // });
 
     var prepare = function(options, originalOptions, jqXHR) {
       var token;
@@ -66,7 +70,7 @@ $(document).ready(function() {
     update_event = function(id, title, start, end){
       $.ajaxPrefilter(prepare);
       $.ajax({
-        type: "post",
+        type: "patch",
         url: '/events/update',
         data: {
           id: id,
